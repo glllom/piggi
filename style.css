@@ -1,0 +1,502 @@
+/******************** NOEN LIGHTS*****************/
+:root {
+    --clr-neon: hsl(317 100% 54%);
+    --clr-bg: hsl(323 21% 16%);
+    --clr-bg-active: hsl(323 60% 20%);
+}
+  
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+a{
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--clr-neon);
+    border: var(--clr-neon) 0.125em solid;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+    position: relative; 
+}
+.neon-button
+   {
+    font-size: 2rem;
+    background-color:  rgb(221, 221, 221);
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--clr-neon);
+    border: var(--clr-neon) 0.125em solid;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+    position: relative;
+}
+  
+.neon-button::before
+   {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: var(--clr-neon);
+    top: 80%;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.7;
+}
+
+.neon-button::after
+   {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em var(--clr-neon);
+    opacity: 0;
+    background-color: var(--clr-neon);
+    z-index: -1;
+    transition: opacity 100ms linear;
+}
+  
+.neon-button:hover,
+.neon-button:focus
+   {
+    color: var(--clr-bg);
+    text-shadow: none;
+}
+  
+.neon-button:hover::before,
+.neon-button:focus::before {
+    opacity: 1;
+}
+  .neon-button:hover::after,
+  .neon-button:focus::after {
+    opacity: 1;
+}
+/************************** NEON END *******************************/
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--clr-neon);
+    background-color: var(--clr-bg);
+    font-family: 'Mouse Memoirs', sans-serif;
+}
+
+h1 {
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 2.8rem;
+}
+
+.smart-border {
+    border: var(--clr-neon) 0.125em solid;
+    border-radius: 10px;
+}
+
+.player-container {
+    opacity: 50%;
+    background-color: var(--clr-bg);
+}
+
+.player-active {
+    opacity: 100%;
+    box-shadow: 0 0 10px var(--clr-bg), 0 0 40px #C600EE, 0 0 80px var(--clr-neon);
+    border: var(--clr-neon) 0.125em solid;
+    background-color: var(--clr-bg-active);
+    
+}
+
+#header{
+    padding-top: .5em;
+    text-align: center;
+    color: var(--clr-neon);
+    position: relative;
+}
+
+.fas {
+    position: relative;
+    margin-left: 2vw;
+    top:-10vh;
+    cursor: pointer;
+}
+
+/********************************MENU*******************/
+.menu {
+    width: 400px;
+    height: 560px;
+    position: fixed;
+    left: calc(50% - 200px);
+    top: calc(50% - 230px);
+    background-color: var(--clr-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#links{
+    margin-top: 1em;
+    font-size: 1.2rem;
+}
+
+#startgame{
+    margin-bottom: 5px;
+    font-size: 2rem;
+
+}
+
+.input-group-text{
+    font-size: 1.5rem;
+}
+
+/***********************PLAYERS************************/
+.input-group-text{
+    color: var(--clr-neon);
+}
+
+.form-select{
+    background-color: var(--clr-bg);
+    color: var(--clr-neon);
+    width: 8rem;
+    height: 2rem;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+#playerchoise{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+}
+
+option{
+    color: var(--clr-neon);
+    background-color: var(--clr-bg);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 42vh 42vh;
+    width: 95vw;
+    margin-left: 2vw;
+    margin-top: -6vh;
+}
+
+.img{
+    margin-top: .5em;
+    margin-left: .5em;
+    height:8em;
+    box-shadow: 0 0 10px var(--clr-bg), 0 0 40px #C600EE, 0 0 80px var(--clr-neon);
+    border-radius: 50%;
+}
+
+.playerEnd {
+    display: flex;
+    justify-content: end;
+    margin-right: 6em;
+    margin-top: .2em;
+}
+
+.playerlogo{
+    text-align: center;
+}
+
+.playerStart{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 6em;
+    margin-top: .2em;
+}
+
+.playername, .currentscore, .totalscore {
+    font-size: 1.5rem;
+}
+/*****************************CUBE**********************/
+.cube {
+    width: 200px;
+    height: 200px;
+    background: none;
+    border: none;
+    border-radius: 20px;
+    margin: 30px;
+}
+
+#gameCube .front {
+    transform: 
+      translateZ(100px);
+}
+  
+#gameCube .back {
+    transform: 
+      rotateX(-180deg)
+      translateZ(100px);
+}
+  
+#gameCube .right {
+    transform:
+      rotateY(90deg)
+      translateZ(100px);
+}
+  
+#gameCube .left {
+    transform:
+      rotateY(-90deg)
+      translateZ(100px);
+}
+  
+#gameCube .top {
+    transform:
+      rotateX(90deg)
+      translateZ(100px);
+}
+  
+#gameCube .bottom {
+    transform:
+      rotateX(-90deg)
+      translateZ(100px);
+}
+
+  
+#gameCube {
+    left: calc(50% - 100px);
+    margin-top: calc(50% - 125px);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 1.8s;
+}
+    
+#gameCube, .cubeSides {
+    background: rgb(250, 0, 208);
+    display: block;
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    top: -2px;
+    border: 1px solid rgb(126, 15, 107);
+    border-radius: 10px;
+    font-size: 500%;
+    text-align: center;
+    padding: 50px 0;
+    color: #fff;
+
+}
+
+#gameCube {
+    border: none
+}
+
+.dot {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 15px;  
+}
+
+
+
+
+.front .dot1 { top: 85px; left: 85px; }
+
+.bottom .dot1 { top: 45px; left: 45px; }
+.bottom .dot2 { top: 125px; left: 125px; }
+
+.right .dot1 { top: 45px; left: 45px; }
+.right .dot2 { top: 85px; left: 85px; }
+.right .dot3 { top: 125px; left: 125px; }
+
+.left .dot1 { top: 45px; left: 45px; }
+.left .dot2 { top: 45px; left: 125px; }
+.left .dot3 { top: 125px; left: 45px; }
+.left .dot4 { top: 125px; left: 125px; }
+
+.top .dot1 { top: 45px; left: 45px; }
+.top .dot2 { top: 45px; left: 125px; }
+.top .dot3 { top: 85px; left: 85px; }
+.top .dot4 { top: 125px; left: 45px; }
+.top .dot5 { top: 125px; left: 125px; }
+
+.back .dot1 { top: 45px; left: 45px; }
+.back  .dot2 { top: 45px; left: 85px; }
+.back  .dot3 { top: 45px; left: 125px; }
+.back  .dot4 { top: 125px; left: 45px; }
+.back  .dot5 { top: 125px; left: 85px; }
+.back  .dot6 { top: 125px; left: 125px; }
+
+/************************************GAME OVER SECTION*********************************************/
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+#gameEnd {
+    background-color:black;
+    text-align:center;
+    position:absolute;
+    border:5px solid #1086e8;
+    width:500px;
+    top:150px;
+    border-radius:20px;
+    left: calc(50% - 100px);
+    top: calc(50% - 80px);
+    margin: -50px 0 0 -150px;
+    animation: border-flicker 2s linear infinite;
+    display: none;
+}
+
+h3 {
+    color:#FF00E6;
+    font-family: 'Raleway', sans-serif;
+    font-size:64px;
+    letter-spacing:10px;
+    animation: text-flicker 3s linear infinite;
+}
+  
+  #offset {
+    animation: letter-flicker 2s linear infinite;
+  }
+  
+  @keyframes text-flicker {
+    0% {
+      opacity:0.1;
+      text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+    }
+    
+    2% {
+      opacity:1;
+      text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+    }
+    8% {
+      opacity:0.1;
+      text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+    }
+    9% {
+      opacity:1;
+      text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+    }
+    12% {
+      opacity:0.1;
+      text-shadow: 0px 0px rgba(242, 22, 22, 1);
+    }
+    20% {
+      opacity:1;
+      text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+    }
+    25% {
+      opacity:0.3;
+      text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+    }
+    30% {
+      opacity:1;
+      text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+    }
+    
+    70% {
+      opacity:0.7;
+      text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+    }
+    
+    72% {
+      opacity:0.2;
+      text-shadow:0px 0px 29px rgba(242, 22, 22, 1)
+    }
+    
+    77% {
+      opacity:.9;
+      text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+    }
+    100% {
+      opacity:.9;
+      text-shadow: 0px 0px 29px rgba(242, 22, 22, 1)
+    }
+  }
+  
+  @keyframes border-flicker {
+    0% {
+      opacity:0.1;
+      -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  -moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+    }
+    2% {
+      opacity:1;
+      -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  -moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+    }
+    4% {
+      opacity:0.1;
+      -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  -moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+    }
+    
+    8% {
+      opacity:1;
+      -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  -moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+    }
+    70% {
+      opacity:0.7;
+      -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  -moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+    }
+    100% {
+      opacity:1;
+      -webkit-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  -moz-box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+  box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
+    }
+  }
+  
+  @keyframes letter-flicker {
+    0% {
+      opacity:0.1;
+      text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+    }
+    2% {
+      opacity:0.1;
+      text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+    }
+    4% {
+      opacity:1;
+      text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+    }
+    
+    
+    19% {
+      opacity:1;
+      text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+    }
+    21% {
+      opacity:0.1;
+      text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+    }
+    23% {
+      opacity:1;
+      text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+    }
+    
+    80% {
+      opacity:1;
+      text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+    }
+    83% {
+      opacity:0.4;
+      text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+    }
+    87% {
+      opacity:1;
+      text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
+    }
+  }

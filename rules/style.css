@@ -1,0 +1,14 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: hsl(323 21% 16%);
+    color: hsl(317 100% 54%);;
+}
+
+h1 {
+    font-family: "Balsamiq Sans", cursive;
+}
+
+footer {
+    margin-top: 100px;
+    text-align: center;
+}
